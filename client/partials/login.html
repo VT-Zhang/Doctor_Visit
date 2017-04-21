@@ -1,0 +1,10 @@
+<div ng-controller="loginController">
+    <h3>Please enter your name to enter the scheduling system!</h3>
+    <form ng-submit="login()">
+        <input type="text" placeholder="enter your name.." ng-model="user.name" />
+        <input type="submit" value="Enter" />
+    </form>
+    <div ng-repeat="error in errors">
+        <p style="color:red">{{error.message}}</p>
+    </div>
+</div>

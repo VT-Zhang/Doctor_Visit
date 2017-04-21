@@ -1,0 +1,28 @@
+<div ng-controller="dashController">
+    <h2>Doctor's Appointments</h2>
+    <h3>Welcome, {{user_name}}! </h3>
+    <a href="" ng-click="logout()">Logout</a>
+    <hr />
+    <p>Search <input type="text" placeholder="by name and complain" ng-model="search_filter" /></p>
+    <div ng-repeat="error in errors track by $index">
+            <p style="color:red">{{error.message}}</p>
+    </div>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>time</th>
+            <th>Patient Name</th>
+            <th>Complain</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="appt in appointments | filter: search_filter | orderBy: '-date' track by $index">
+            <td>{{appt.date | date:"short"}}</td>
+            <td>{{appt.time}}</td>
+            <td>{{appt._user.name}}</td>
+            <td>{{appt.complain}}</td>
+            <td><button ng-if="user_name == appt._user.name" type="button" ng-click="delete(appt._id)">Cancel</button></td>
+        </tr>
+    </table>
+    <br />
+    <a href="#!/new_appointment">Add New Appointment</a>
+</div>

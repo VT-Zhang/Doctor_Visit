@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Doctor Appointment</title>
+        <script src="angular/angular.js"></script>
+        <script src="angular-route/angular-route.js"></script>
+        <script src="angular-cookies/angular-cookies.js"></script>
+        <script src="assets/app.js" charset="utf-8"></script>
+        <script src="assets/controllers/loginController.js" charset="utf-8"></script>
+        <script src="assets/controllers/dashController.js" charset="utf-8"></script>
+        <script src="assets/controllers/newController.js" charset="utf-8"></script>
+        <script src="assets/factories/mainFactory.js" charset="utf-8"></script>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            #wrapper{
+                width: 700px;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 20px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Doctor's Appointments Scheduling System</h1>
+            <div ng-view=""></div>
+        </div>
+    </body>
+</html>
