@@ -5,6 +5,8 @@ app.controller("newController", ["$scope", "mainFactory", "$location", "$cookies
             $location.url("/");
         };
         $scope.appt = {};
+        $scope.today = new Date().toISOString().split("T")[0];
+        console.log($scope.today);
     }
     index();
 

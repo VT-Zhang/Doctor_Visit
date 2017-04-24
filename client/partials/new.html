@@ -5,7 +5,7 @@
     </div>
     <form ng-submit="create()">
         <p>
-            Date: <input type="date" min="2017-04-21" ng-model="appt.date" />
+            Date: <input type="date" min="{{today}}" ng-model="appt.date" />
             Time: <select ng-model="appt.time">
                       <option selected disabled value="">select time</option>
                       <option value="8:00 AM">8:00 AM</option>

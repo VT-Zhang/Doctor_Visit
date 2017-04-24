@@ -15,12 +15,12 @@
             <th>Complain</th>
             <th>Action</th>
         </tr>
-        <tr ng-repeat="appt in appointments | filter: search_filter | orderBy: '-date' track by $index">
-            <td>{{appt.date | date:"short"}}</td>
+        <tr ng-repeat="appt in appointments | filter: search_filter | orderBy: 'date' track by $index">
+            <td>{{appt.date | date:"shortDate"}}</td>
             <td>{{appt.time}}</td>
             <td>{{appt._user.name}}</td>
             <td>{{appt.complain}}</td>
-            <td><button ng-if="user_name == appt._user.name" type="button" ng-click="delete(appt._id)">Cancel</button></td>
+            <td><button ng-if="user_name == appt._user.name && appt.date != today" type="button" ng-click="delete(appt._id)">Cancel</button></td>
         </tr>
     </table>
     <br />

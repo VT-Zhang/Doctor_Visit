@@ -1,7 +1,8 @@
 app.controller("dashController", ["$scope", "mainFactory", "$location", "$cookies", function($scope, mainFactory, $location, $cookies){
 
     $scope.user_name = $cookies.get("user_name");
-
+    $scope.today = new Date().toISOString().split("T")[0]+"T04:00:00.000Z";
+    console.log($scope.today);
 
     var index = function(){
         if(!$cookies.get("user_id")){
